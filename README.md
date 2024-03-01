@@ -16,8 +16,22 @@ The following is an example of the model's predictions on the test set:
 This is if you would like to play with it yourself.
 
 ### Prerequisites
-Download the MNIST dataset from [here](https://www.kaggle.com/datasets/hojjatk/mnist-dataset). Extract the files and place them in a directory at the root level named `dataset`.
+Download the MNIST dataset from [here](https://www.kaggle.com/datasets/hojjatk/mnist-dataset). Extract the files and place them in a directory at the root level named `dataset/MNNIST`.
 
+This is what it should look liked after extracting the files. The `mnist_train.csv` and `mnist_test.csv` files should be in the `MNIST` directory under `datasets`
+```
+root
+├── README.md
+├── datasets
+│   ├── MNIST
+│   │   ├── mnist_test.csv
+│   │   └── mnist_train.csv
+├── requirements.txt
+├── res
+│   └── ...
+└── src
+    └── ...
+```
 ### Installing
 To install the required packages, run the following command:
 ```
