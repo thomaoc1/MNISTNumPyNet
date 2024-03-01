@@ -32,7 +32,7 @@ class NeuralNetwork:
 
     def backward(self, X, y, learning_rate=0.01):
         m = X.shape[0]
-        D = []
+        D = np.empty(len(self.layers), dtype=object)
         output_error = self.layers[-1].a - y
         for idx in reversed(range(len(self.layers))):
             layer = self.layers[idx]
@@ -45,10 +45,10 @@ class NeuralNetwork:
             db = np.sum(output_error, axis=0, keepdims=True)
 
             output_error = np.dot(output_error, layer.W) * Activation.relu_derivative(prev_layer_a)
-            D.append((dW, db))
+            D[idx] = (dW, db)
 
         for idx, layer in enumerate(self.layers):
-            dW, db = D.pop()
+            dW, db = D[idx]
             layer.W -= learning_rate * dW / m
             layer.b -= learning_rate * db / m
 
