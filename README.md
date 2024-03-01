@@ -56,3 +56,8 @@ For example (the default):
 ```
 python3 -m src.main -hl 200 100 -lr 0.01 -bz 32 -e 5
 ```
+
+## Further Work
+- [ ] Generalise the model to work with any dataset
+- [ ] Add more activation functions
+- [ ] Add more loss functions
